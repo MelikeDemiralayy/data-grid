@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    border-radius: 6px;
+    background: linear-gradient(
+      180deg,
+      #eff2ff -30.56%,
+      rgba(232, 236, 255, 0) 135.85%
+    );
+    border-radius: 6px;
+    margin: 40px;
+  }
+  
