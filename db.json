@@ -1,0 +1,30 @@
+{
+    "socialMediaData": [
+      {
+        "id": 1,
+        "SosyalMedyaLinki": "instagram.com/mobilerast/",
+        "SosyalMedyaAdı": "Instagram",
+        "Açıklma": "We'll help you to finish your development project successfully."
+      },
+      {
+        "id": 2,
+        "SosyalMedyaLinki": "tr.linkedin.com/company/rastmobile",
+        "SosyalMedyaAdı": "LinkedIn",
+        "Açıklma": "Hire vetted developers from Rast Mobile to scale up your tech projects."
+      },
+      {
+        "id": 3,
+        "SosyalMedyaLinki": "behance.net/rastmobile",
+        "SosyalMedyaAdı": "Behance",
+        "Açıklma": "Software Development Agency Rast Mobile Information Technology Ltd."
+      },
+      {
+        "id": 4,
+        "SosyalMedyaLinki": "twitter.com/rastmobile",
+        "SosyalMedyaAdı": "Twitter",
+        "Açıklma": "Software Development Agency Rast Mobile Information Technology Ltd."
+      }
+     
+    ]
+  }
+  

@@ -1,21 +1,48 @@
-import DataGrid from "devextreme-react/data-grid";
-import { customers } from "./data";
+import DataGrid, { Column } from "devextreme-react/data-grid";
 import Navbar from "./components/Navbar/Navbar";
 import GridCard from "./components/GridCard";
+import { useState, useEffect } from "react";
+import { fetchSocialMedia } from "./data/api";
 
-const columns = ["CompanyName", "City", "State", "Phone", "Fax"];
+const columns = ["SosyalMedyaLinki", "SosyalMedyaAdı", "Açıklama"];
 
 const App = () => {
+  const [socialMediaData, setSocialMediaData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchSocialMedia();
+        setSocialMediaData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <Navbar />
       <GridCard>
-        <DataGrid
-          dataSource={customers}
-          keyExpr="ID"
-          defaultColumns={columns}
-          showBorders={true}
-        />
+        <DataGrid dataSource={socialMediaData} keyExpr="id" showBorders={true}>
+          {columns.map((columnName) => (
+            <Column
+              key={columnName}
+              dataField={
+                columnName === "SosyalMedyaLinki"
+                  ? "SosyalMedyaLinki"
+                  : columnName === "SosyalMedyaAdı"
+                  ? "SosyalMedyaAdı"
+                  : columnName === "Açıklama"
+                  ? "Açıklma"
+                  : undefined
+              }
+              caption={columnName}
+            />
+          ))}
+        </DataGrid>
       </GridCard>
     </>
   );
