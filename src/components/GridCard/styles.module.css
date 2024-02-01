@@ -10,5 +10,6 @@
     );
     border-radius: 6px;
     margin: 40px;
+    flex-direction: column;
   }
   
