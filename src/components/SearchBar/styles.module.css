@@ -1,0 +1,58 @@
+.search{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 42px;
+  }
+  
+  .input{
+    width: 380px;
+    height: 32px;
+    border-radius: 39px 0 0 39px;
+    background: #FFF;
+    border: 1px solid #ccc; 
+    padding: 5px 10px;
+    display: flex;
+    float: left;
+  }
+  
+  .button{
+      width: 45px;
+      height: 38px;
+      background: #744BFC;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+  }
+  .filter{
+    width: 49px;
+    height: 42px;
+    border-radius: 29px;
+    background-color: #FFFFFF;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    
+  }
+  .account{
+    width: 175px;
+    height: 42px;
+    border-radius: 39px;
+    position:relative;
+    margin-left: auto;
+    background: #744BFC;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 42px; 
+    letter-spacing: 0em;
+    text-align: center; 
+    color: #FFF;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  

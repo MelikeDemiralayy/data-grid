@@ -1,30 +1,46 @@
 {
-    "socialMediaData": [
-      {
-        "id": 1,
-        "SosyalMedyaLinki": "instagram.com/mobilerast/",
-        "SosyalMedyaAdı": "Instagram",
-        "Açıklma": "We'll help you to finish your development project successfully."
-      },
-      {
-        "id": 2,
-        "SosyalMedyaLinki": "tr.linkedin.com/company/rastmobile",
-        "SosyalMedyaAdı": "LinkedIn",
-        "Açıklma": "Hire vetted developers from Rast Mobile to scale up your tech projects."
-      },
-      {
-        "id": 3,
-        "SosyalMedyaLinki": "behance.net/rastmobile",
-        "SosyalMedyaAdı": "Behance",
-        "Açıklma": "Software Development Agency Rast Mobile Information Technology Ltd."
-      },
-      {
-        "id": 4,
-        "SosyalMedyaLinki": "twitter.com/rastmobile",
-        "SosyalMedyaAdı": "Twitter",
-        "Açıklma": "Software Development Agency Rast Mobile Information Technology Ltd."
-      }
-     
-    ]
-  }
-  
+  "socialMediaData": [
+    {
+      "id": 1,
+      "Sosyal Medya Linki": "instagram.com/mobilerast/",
+      "Sosyal Medya Adı": "Instagram",
+      "Açıklma": "We'll help you to finish your development project successfully."
+    },
+    {
+      "id": 2,
+      "Sosyal Medya Linki": "tr.linkedin.com/company/rastmobile",
+      "Sosyal Medya Adı": "LinkedIn",
+      "Açıklma": "Hire vetted developers from Rast Mobile to scale up your tech projects."
+    },
+    {
+      "id": 3,
+      "Sosyal Medya Linki": "behance.net/rastmobile",
+      "Sosyal Medya Adı": "Behance",
+      "Açıklma": "Software Development Agency Rast Mobile Information Technology Ltd."
+    },
+    {
+      "id": 4,
+      "Sosyal Medya Linki": "twitter.com/rastmobile",
+      "Sosyal Medya Adı": "Twitter",
+      "Açıklma": "Software Development Agency Rast Mobile Information Technology Ltd."
+    },
+    {
+      "id": "1d30",
+      "Sosyal Medya Linki": "test",
+      "Sosyal Medya Adı": "test",
+      "Açıklma": "test"
+    },
+    {
+      "id": "39b5",
+      "Sosyal Medya Linki": "testmedia",
+      "Sosyal Medya Adı": "test media",
+      "Açıklma": "test media"
+    },
+    {
+      "id": "013e",
+      "Sosyal Medya Linki": "newmedia",
+      "Sosyal Medya Adı": "new media",
+      "Açıklma": "new media"
+    }
+  ]
+}

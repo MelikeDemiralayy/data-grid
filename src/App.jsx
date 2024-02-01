@@ -3,8 +3,9 @@ import Navbar from "./components/Navbar/Navbar";
 import GridCard from "./components/GridCard";
 import { useState, useEffect } from "react";
 import { fetchSocialMedia } from "./data/api";
+import SearchBar from "./components/SearchBar";
 
-const columns = ["SosyalMedyaLinki", "SosyalMedyaAdı", "Açıklama"];
+const columns = ["Sosyal Medya Linki", "Sosyal Medya Adı", "Açıklama"];
 
 const App = () => {
   const [socialMediaData, setSocialMediaData] = useState([]);
@@ -26,15 +27,16 @@ const App = () => {
     <>
       <Navbar />
       <GridCard>
+        <SearchBar />
         <DataGrid dataSource={socialMediaData} keyExpr="id" showBorders={true}>
           {columns.map((columnName) => (
             <Column
               key={columnName}
               dataField={
-                columnName === "SosyalMedyaLinki"
-                  ? "SosyalMedyaLinki"
-                  : columnName === "SosyalMedyaAdı"
-                  ? "SosyalMedyaAdı"
+                columnName === "Sosyal Medya Linki"
+                  ? "Sosyal Medya Linki"
+                  : columnName === "Sosyal Medya Adı"
+                  ? "Sosyal Medya Adı"
                   : columnName === "Açıklama"
                   ? "Açıklma"
                   : undefined
