@@ -4,9 +4,7 @@ import Layout from "./components/Layout/Layout.jsx";
 import "./styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <>
-    <Layout>
-      <App />
-    </Layout>
-  </>
+  <Layout>
+    <App />
+  </Layout>
 );
