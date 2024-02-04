@@ -1,28 +1,62 @@
-import { useRef } from "react";
-import { addSocialMedia } from "../../data/api";
+import { useState, useEffect } from "react";
+import { addSocialMedia, fetchSocialMedia } from "../../data/api";
 import styles from "./style.module.css";
 import PropTypes from "prop-types";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NewAccount = ({ closeModal }) => {
-  const SosyalMedyaLinkiRef = useRef(null);
-  const SosyalMedyaAdıRef = useRef(null);
-  const descriptionRef = useRef(null);
+  const [socialMediaData, setSocialMediaData] = useState([]);
+  const [socialMediaLink, setSocialMediaLink] = useState("");
+  const [socialMediaName, setSocialMediaName] = useState("");
+  const [description, setDescription] = useState("");
 
-  const handleSaveClick = async () => {
-    // Input değerlerini alarak yeni sosyal medya objesini oluşturun
-    const newSocialMedia = {
-      SosyalMedyaLinki: SosyalMedyaLinkiRef.current.value,
-      SosyalMedyaAdi: SosyalMedyaAdıRef.current.value,
-      Aciklama: descriptionRef.current.value,
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const localData = JSON.parse(localStorage.getItem("socialMediaData"));
+        if (localData) {
+          setSocialMediaData(localData);
+        } else {
+          const data = await fetchSocialMedia();
+          setSocialMediaData(data.socialMediaData);
+        }
+      } catch (error) {
+        console.error("Veri çekme hatası:", error);
+      }
     };
 
-    // Yeni sosyal medya verilerini eklemek için API fonksiyonunu kullanın
-    await addSocialMedia(newSocialMedia);
+    fetchData();
+  }, []);
 
-    // Modalı kapatın
-    closeModal();
+  const handleSaveClick = async () => {
+    const newSocialMedia = {
+      "Sosyal Medya Linki": socialMediaLink,
+      "Sosyal Medya Adı": socialMediaName,
+      Açıklma: description,
+    };
+
+    try {
+      await addSocialMedia(newSocialMedia);
+
+      // Yeni veriyi ekledikten sonra localStorage'a kaydet
+      const updatedData = await fetchSocialMedia();
+      setSocialMediaData(updatedData.socialMediaData);
+
+      localStorage.setItem(
+        "socialMediaData",
+        JSON.stringify(updatedData.socialMediaData)
+      );
+
+      toast.success("Veri başarıyla kaydedildi!", { autoClose: 3000 });
+    } catch (error) {
+      console.error("Veri ekleme hatası:", error);
+      toast.error("Veri kaydedilirken bir hata oluştu!", { autoClose: 5000 });
+    } finally {
+      // Modalı kapat
+      closeModal();
+    }
   };
-
   return (
     <div className={styles.modal}>
       <div className={styles.content}>
@@ -30,15 +64,33 @@ const NewAccount = ({ closeModal }) => {
           X
         </button>
         <label htmlFor="socialMediaLink">Sosyal Medya Linki</label>
-        <input type="text" id="socialMediaLink" className={styles.input} />
+        <input
+          type="text"
+          id="socialMediaLink"
+          className={styles.input}
+          value={socialMediaLink}
+          onChange={(e) => setSocialMediaLink(e.target.value)}
+        />
 
         <label htmlFor="socialMediaName">Sosyal Medya Adı</label>
-        <input type="text" id="socialMediaName" className={styles.input} />
+        <input
+          type="text"
+          id="socialMediaName"
+          className={styles.input}
+          value={socialMediaName}
+          onChange={(e) => setSocialMediaName(e.target.value)}
+        />
 
         <label htmlFor="description">Açıklama</label>
-        <input type="text" id="description" className={styles.input} />
+        <input
+          type="text"
+          id="description"
+          className={styles.input}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
 
-        <div className={styles.button.contanier}>
+        <div className={styles.button.container}>
           <button className={styles.cancel} onClick={closeModal}>
             Vazgeç
           </button>
