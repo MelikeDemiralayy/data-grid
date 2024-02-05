@@ -1,11 +1,10 @@
-import DataGrid, { Column } from "devextreme-react/data-grid";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import GridCard from "./components/GridCard";
-import { useState, useEffect } from "react";
 import { fetchSocialMedia } from "./data/api";
 import SearchBar from "./components/SearchBar";
-
-const columns = ["Sosyal Medya Linki", "Sosyal Medya Adı", "Açıklama"];
+import DataGridTable from "./components/DataGridTable";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const [socialMediaData, setSocialMediaData] = useState([]);
@@ -27,24 +26,9 @@ const App = () => {
     <>
       <Navbar />
       <GridCard>
+        <ToastContainer />
         <SearchBar />
-        <DataGrid dataSource={socialMediaData} keyExpr="id" showBorders={true}>
-          {columns.map((columnName) => (
-            <Column
-              key={columnName}
-              dataField={
-                columnName === "Sosyal Medya Linki"
-                  ? "Sosyal Medya Linki"
-                  : columnName === "Sosyal Medya Adı"
-                  ? "Sosyal Medya Adı"
-                  : columnName === "Açıklama"
-                  ? "Açıklma"
-                  : undefined
-              }
-              caption={columnName}
-            />
-          ))}
-        </DataGrid>
+        <DataGridTable socialMediaData={socialMediaData} />
       </GridCard>
     </>
   );

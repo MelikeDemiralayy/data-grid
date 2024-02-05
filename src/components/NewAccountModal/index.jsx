@@ -37,23 +37,40 @@ const NewAccount = ({ closeModal }) => {
     };
 
     try {
-      await addSocialMedia(newSocialMedia);
+      const addedSocialMedia = await addSocialMedia(newSocialMedia); // Yeni veri ekleyip dönen veriyi almak için
+      // Yeni eklenen veriyi listeye ekleyip sayfayı yeniden güncellemk için;
+      setSocialMediaData((prevSocialMediaData) => [
+        ...prevSocialMediaData,
+        addedSocialMedia,
+      ]);
+      console.log("test");
 
-      // Yeni veriyi ekledikten sonra localStorage'a kaydet
-      const updatedData = await fetchSocialMedia();
-      setSocialMediaData(updatedData.socialMediaData);
-
+      // Güncellenen veriyi localStorage'a kaydet;
       localStorage.setItem(
         "socialMediaData",
-        JSON.stringify(updatedData.socialMediaData)
+        JSON.stringify([...socialMediaData, addedSocialMedia])
       );
+
+      const fetchData = async () => {
+        try {
+          const localData = JSON.parse(localStorage.getItem("socialMediaData"));
+          if (localData) {
+            setSocialMediaData(localData);
+          } else {
+            const data = await fetchSocialMedia();
+            setSocialMediaData(data.socialMediaData);
+          }
+        } catch (error) {
+          console.error("Veri çekme hatası:", error);
+        }
+      };
+      fetchData();
 
       toast.success("Veri başarıyla kaydedildi!", { autoClose: 3000 });
     } catch (error) {
       console.error("Veri ekleme hatası:", error);
       toast.error("Veri kaydedilirken bir hata oluştu!", { autoClose: 5000 });
     } finally {
-      // Modalı kapat
       closeModal();
     }
   };
