@@ -1,25 +1,25 @@
 {
   "socialMediaData": [
     {
-      "id": 1,
+      "id": "1",
       "Sosyal Medya Linki": "instagram.com/mobilerast/",
       "Sosyal Medya Adı": "Instagram",
       "Açıklma": "We'll help you to finish your development project successfully."
     },
     {
-      "id": 2,
+      "id": "2",
       "Sosyal Medya Linki": "tr.linkedin.com/company/rastmobile",
       "Sosyal Medya Adı": "LinkedIn",
       "Açıklma": "Hire vetted developers from Rast Mobile to scale up your tech projects."
     },
     {
-      "id": 3,
+      "id": "3",
       "Sosyal Medya Linki": "behance.net/rastmobile",
       "Sosyal Medya Adı": "Behance",
       "Açıklma": "Software Development Agency Rast Mobile Information Technology Ltd."
     },
     {
-      "id": 4,
+      "id": "4",
       "Sosyal Medya Linki": "twitter.com/rastmobile",
       "Sosyal Medya Adı": "Twitter",
       "Açıklma": "Software Development Agency Rast Mobile Information Technology Ltd."
@@ -29,6 +29,12 @@
       "Sosyal Medya Linki": "new media link",
       "Sosyal Medya Adı": "new social media link",
       "Açıklma": "lorem ispum set"
+    },
+    {
+      "id": "f564",
+      "Sosyal Medya Linki": "Test Media Link",
+      "Sosyal Medya Adı": "Test Media ",
+      "Açıklma": "Test Media desciription"
     }
   ]
 }

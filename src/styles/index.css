@@ -2,3 +2,46 @@
     padding: 0px;
     margin: 0px;
 }
+.dx-datagrid-headers .dx-datagrid-table .dx-row {
+    width: 1429px !important;
+    height: 63.04px !important;
+    background: #FFFFFF !important;
+}
+.dx-datagrid .dx-column-lines {
+    width: 1430px !important;
+    height: 66px !important;  
+}
+.dx-datagrid .dx-datagrid-rowsview .dx-row:nth-child(2n) {
+    background: rgba(239, 242, 255, 0.7) !important;
+}
+.dx-datagrid{
+    width: 1430px !important;
+    height: 658px !important;
+    border-radius: 8px !important;
+}
+.dx-datagrid-content .dx-datagrid-table .dx-row {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 15px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+    color:#000000 !important;  
+}
+.dx-datagrid-nowrap .dx-datagrid-nowrap .dx-header-row .dx-datagrid-text-content{
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    letter-spacing: 0em !important;
+    color: black !important; 
+}
+.dx-datagrid .dx-datagrid-headers .dx-datagrid-table th:first-child .dx-datagrid-text-content {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+    color: #000000 !important;
+}
