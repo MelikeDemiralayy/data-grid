@@ -2,14 +2,16 @@ import PropTypes from "prop-types";
 import DataGrid, { Column } from "devextreme-react/data-grid";
 import styles from "./style.module.css";
 
-const DataGridTable = ({ socialMediaData }) => {
+const DataGridTable = ({ socialMediaData, rowCount }) => {
   const columns = ["Sosyal Medya Linki", "Sosyal Medya Adı", "Açıklama"];
+
+  const limitedData = socialMediaData.slice(0, rowCount);
 
   return (
     <div>
       <DataGrid
         className={styles.table}
-        dataSource={socialMediaData}
+        dataSource={limitedData}
         keyExpr="id"
         showBorders={true}
       >
@@ -32,6 +34,7 @@ const DataGridTable = ({ socialMediaData }) => {
     </div>
   );
 };
+
 DataGridTable.propTypes = {
   socialMediaData: PropTypes.arrayOf(
     PropTypes.shape({
@@ -41,5 +44,7 @@ DataGridTable.propTypes = {
       Açıklama: PropTypes.string.isRequired,
     })
   ).isRequired,
+  rowCount: PropTypes.number.isRequired,
 };
+
 export default DataGridTable;

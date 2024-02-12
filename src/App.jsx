@@ -5,9 +5,15 @@ import { fetchSocialMedia } from "./data/api";
 import SearchBar from "./components/SearchBar";
 import DataGridTable from "./components/DataGridTable";
 import { ToastContainer } from "react-toastify";
+import TableFooter from "./components/TableFooter";
 
 const App = () => {
   const [socialMediaData, setSocialMediaData] = useState([]);
+  const [rowCount, setRowCount] = useState(4);
+
+  const handleRowCountChange = (newRowCount) => {
+    setRowCount(newRowCount);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +34,8 @@ const App = () => {
       <GridCard>
         <ToastContainer />
         <SearchBar />
-        <DataGridTable socialMediaData={socialMediaData} />
+        <DataGridTable socialMediaData={socialMediaData} rowCount={rowCount} />
+        <TableFooter onRowCountChange={handleRowCountChange} />
       </GridCard>
     </>
   );
