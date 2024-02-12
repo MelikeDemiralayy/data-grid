@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    font-family: 'Inter', sans-serif;
 }
 .dx-datagrid-headers .dx-datagrid-table .dx-row {
     width: 1429px !important;
@@ -15,33 +16,31 @@
     background: rgba(239, 242, 255, 0.7) !important;
 }
 .dx-datagrid{
-    width: 1430px !important;
     height: 658px !important;
     border-radius: 8px !important;
+    justify-content: center !important;
 }
 .dx-datagrid-content .dx-datagrid-table .dx-row {
-    font-family: 'Inter', sans-serif !important;
     font-size: 12px !important;
     font-weight: 400 !important;
     line-height: 15px !important;
-    letter-spacing: 0em !important;
-    text-align: left !important;
     color:#000000 !important;  
 }
 .dx-datagrid-nowrap .dx-datagrid-nowrap .dx-header-row .dx-datagrid-text-content{
-    font-family: 'Poppins', sans-serif !important;
     font-size: 13px !important;
-    font-weight: 500 !important;
     line-height: 20px !important;
-    letter-spacing: 0em !important;
     color: black !important; 
 }
 .dx-datagrid .dx-datagrid-headers .dx-datagrid-table th:first-child .dx-datagrid-text-content {
-    font-family: 'Poppins', sans-serif !important;
     font-size: 13px !important;
-    font-weight: 500 !important;
     line-height: 20px !important;
-    letter-spacing: 0em !important;
-    text-align: left !important;
     color: #000000 !important;
+}
+.dx-header-row > td > .dx-datagrid-text-content {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: bold;
+    font-size: 13px !important;
+}
+.dx-datagrid-content .dx-datagrid-table .dx-row > td {
+    vertical-align: middle !important;
 }
