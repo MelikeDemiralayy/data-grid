@@ -1,14 +1,13 @@
 # Rast Mobile - Sosyal Medya Yönetim Uygulaması
 
 Bu proje, sosyal medya verilerini görüntüleyen, arama yapabilen ve yeni sosyal medya hesapları ekleyebilen bir web uygulamasını içermektedir. Proje, React kullanılarak geliştirilmiş ve verileri tablo formatında göstermek için DevExtreme React Grid kullanılmıştır ve JSON Server ile oluşturulan bir API üzerinden sosyal medya verilerini yönetmektedir.
-
 ## Özellikler
 
 - Sosyal medya verilerini görüntüleme.
 - Sosyal medya adı, link veya açıklama gibi kriterlere göre arama yapabilme.
 - Yeni sosyal medya hesapları ekleyebilme.
 
-  ## Kullanılan Teknolojiler
+## Kullanılan Teknolojiler
 
 - React
 - DevExtreme React Grid
@@ -27,7 +26,7 @@ Proje, aşağıdaki bileşenleri içermektedir:
 - **DataGridTable:** Sosyal medya verilerini tablo formatında gösteren bileşen.
 - **TableFooter:** Tablonun altında yer alan sayfalama ve satır sayısı kontrolünü sağlayan bileşen.
 - **NewAccount:** Yeni sosyal medya hesapları eklemek için kullanılan modal bileşen.(Eklenen veriler kullanıcının localinde kayıt edilir.)
-  
+
 ## Kullanım
 
 - Navbar üzerinden farklı sayfalara gidilebilir.
@@ -37,7 +36,7 @@ Proje, aşağıdaki bileşenleri içermektedir:
 - TableFooter ile görüntülenen satır sayısını artırma veya azaltma işlemleri ve sayfa arası geçişler yapılabilir. 
 
 
-  ## Kurulum
+## Kurulum
 
 1. Projeyi bilgisayarınıza klonlayın:
 
@@ -67,8 +66,7 @@ Proje, aşağıdaki bileşenleri içermektedir:
     npm run dev
     ```
    Tarayıcınızda http://localhost:5173 adresine giderek projeyi görüntüleyin.
-   
 
-# Proje Linki
+## Proje Linki
 
 Projeyi canlı olarak incelemek için https://rast-mobile-task-steel.vercel.app/ adresini ziyaret edebilirsiniz.
